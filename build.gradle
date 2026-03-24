@@ -7,7 +7,7 @@ plugins {
 group = 'live.learnwithchampak'
 version = '0.0.1-SNAPSHOT'
 
-description = 'Clean Spring Boot starter project with separated controller and basic tests'
+description = 'Spring Boot starter focused on Thymeleaf templates, fragments, and form handling'
 
 java {
     toolchain {
@@ -20,9 +20,14 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-webmvc'
 
-    testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-test-autoconfigure'
+    testImplementation 'org.jsoup:jsoup:1.18.3'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 

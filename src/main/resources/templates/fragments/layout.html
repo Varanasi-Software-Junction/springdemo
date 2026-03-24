@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<header th:fragment="siteHeader(activePage)">
+    <div class="topbar">
+        <div class="brand">Programmer's Picnic • Spring Templates</div>
+        <nav class="nav">
+            <a th:href="@{/}" th:classappend="${activePage == 'home'} ? ' active' : ''">Home</a>
+            <a th:href="@{/hello}" th:classappend="${activePage == 'hello'} ? ' active' : ''">Greeting Form</a>
+            <a th:href="@{/about}" th:classappend="${activePage == 'about'} ? ' active' : ''">About</a>
+        </nav>
+    </div>
+</header>
+
+<footer th:fragment="siteFooter(year)">
+    <footer class="footer">
+        <p>Built with Spring Boot, Thymeleaf, and reusable fragments.</p>
+        <p>© <span th:text="${year}">2026</span> Programmer's Picnic</p>
+    </footer>
+</footer>
+</body>
+</html>
