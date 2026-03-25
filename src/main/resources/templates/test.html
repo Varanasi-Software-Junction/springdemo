@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title th:text="${pageTitle}">Home</title>
+  </head>
+  <body>
+    <div><h1>This is my test page </h1></div>
+    <p th:text="${message}">Default message</p>
+    <ul>
+  <li th:each="topic : ${topics}" th:text="${topic}">Sample Topic</li>
+</ul>
+  </body>
+</html>
