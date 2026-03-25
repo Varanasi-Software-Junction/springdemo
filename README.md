@@ -1,79 +1,109 @@
-# Spring Starter v3 — Templates Edition
+# Spring Starter v2
 
-A clean Spring Boot starter that focuses on **server-side templates** using **Thymeleaf**.
+A clean Spring Boot starter project for learning and sharing.
 
-This version is meant for learning and demo projects where you want to render HTML pages from Spring instead of returning only JSON APIs.
+## What this project includes
+- A proper Spring Boot entry point
+- A separate controller class
+- A root endpoint for browser testing
+- A `/hello` endpoint with a query parameter
+- A `/ping` endpoint for quick checks
+- Basic tests for context loading and endpoint behavior
+- Gradle Wrapper for easier setup
 
-## What this version teaches
-
-- Spring MVC controllers that return template names
-- Thymeleaf expressions like `th:text`, `th:href`, `th:each`, and `th:if`
-- Shared page fragments for header and footer
-- Form handling with `@ModelAttribute`
-- Static assets from `/static/css` and `/static/js`
-
-## Stack
-
-- Java 17+
-- Spring Boot 4.0.4
-- Thymeleaf
+## Tech stack
+- Java 17
+- Spring Boot
 - Gradle Wrapper
 
-## Routes
+## Project structure
+```text
+spring-starter-v2/
+├── build.gradle
+├── settings.gradle
+├── gradlew
+├── gradlew.bat
+├── gradle/wrapper/
+├── src/main/java/live/learnwithchampak/demo/
+│   ├── DemoApplication.java
+│   └── controller/
+│       └── HelloController.java
+├── src/main/resources/
+│   └── application.properties
+└── src/test/java/live/learnwithchampak/demo/
+    ├── DemoApplicationTests.java
+    └── controller/
+        └── HelloControllerTest.java
+```
 
-- `/` → template home page
-- `/hello` → greeting form page
-- `POST /hello` → greeting result page
-- `/about` → template notes page
-
-## Run locally
-
+## Run the project
 ### Windows
-
 ```bash
 gradlew.bat bootRun
 ```
 
 ### macOS / Linux
-
 ```bash
 ./gradlew bootRun
 ```
 
-Then open:
-
-- `http://localhost:8080/`
-- `http://localhost:8080/hello`
-- `http://localhost:8080/about`
-
-## Project structure
-
+The application starts on:
 ```text
-src/
-  main/
-    java/live/learnwithchampak/demo/
-      DemoApplication.java
-      controller/
-        PageController.java
-      model/
-        GreetingForm.java
-    resources/
-      application.properties
-      templates/
-        index.html
-        hello-form.html
-        hello-result.html
-        about.html
-        fragments/
-          layout.html
-      static/
-        css/site.css
-        js/site.js
+http://localhost:8080
 ```
 
-## What to learn next
+## Try the endpoints
+Open these in your browser:
 
-- Add validation to the form
-- Add a service layer for page data
-- Introduce a database and show records inside a table template
-- Add a layout dialect or reusable components for larger apps
+```text
+http://localhost:8080/
+http://localhost:8080/ping
+http://localhost:8080/hello
+http://localhost:8080/hello?name=Champak
+```
+
+## Example responses
+### GET /
+```text
+Spring Starter v2 is running.
+```
+
+### GET /ping
+```text
+pong
+```
+
+### GET /hello
+```text
+Hello World!
+```
+
+### GET /hello?name=Champak
+```text
+Hello Champak!
+```
+
+## Run tests
+### Windows
+```bash
+gradlew.bat test
+```
+
+### macOS / Linux
+```bash
+./gradlew test
+```
+
+## Notes
+- Use the Gradle Wrapper instead of a system Gradle install when possible.
+- The first run may download dependencies from Maven Central.
+- Java 17 should be installed and available on your system.
+
+## Suggested next steps
+- Add a service layer
+- Return JSON instead of plain text
+- Add POST endpoints
+- Connect a database later
+
+## License
+This project includes the existing license file from the original demo.

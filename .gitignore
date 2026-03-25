@@ -1,9 +1,15 @@
+# Gradle
 .gradle/
 build/
-out/
+
+# IDE
 .idea/
-.vscode/
 *.iml
-*.log
+.vscode/
+
+# OS files
 .DS_Store
 Thumbs.db
+
+# Logs
+*.log
